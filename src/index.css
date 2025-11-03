@@ -20,6 +20,9 @@
   --primary-beige: #D2B48C;
 }
 
+
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -30,17 +33,19 @@ a:hover {
 }
 
 body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-purple);
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  backgroun
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--primary-purple)!important;
 }
 
 button {
@@ -64,8 +69,8 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--primary-purple);
+    background-color: var(--primary-bg-color);
   }
   a:hover {
     color: #747bff;
