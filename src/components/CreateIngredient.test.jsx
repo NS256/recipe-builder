@@ -16,4 +16,6 @@
 7. Minutes can't be set to less than 0
 
 8. Hours can't be set to less than 0
+
+9. Test expected output from IngredientUtils/normalizeTime
 */
