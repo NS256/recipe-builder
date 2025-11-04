@@ -1,3 +1,7 @@
+.time-input-form {
+    width: 100%
+}
+
 .time-input {
     width: 40px;
 }
@@ -6,3 +10,4 @@
     height: 30px;
     width: 30px;
 }
+

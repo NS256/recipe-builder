@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { normalizeTime } from '../utils/IngredientUtilities';
 import '../styles/CreateIngredient.css';
+import TimeDurationInput from './TimeDurationInput';
 
 export default function CreateIngredient({recipe, setRecipe}) {
 
@@ -8,13 +9,21 @@ export default function CreateIngredient({recipe, setRecipe}) {
         const [ingredient,setIngredient] = useState({
             name: "",
             quantity: 1,
-            prepTime: 0,
+            prepTime: {
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            },
             cookTime: {
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
             },
-            restTime: 0,
+            restTime: {
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            },
         })
         const [showAllFormDetails, setShowAllFormDetails] = useState(false);
 
@@ -47,25 +56,52 @@ export default function CreateIngredient({recipe, setRecipe}) {
 
         }
     
-        const handleCancel = () => {
-    
+        const handleResetForm = () => {
+            console.log("Resetting form");
+
+            const defaultIngredientState = {
+                name: "",
+                quantity: 1,
+                prepTime: {
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0,
+                },
+                cookTime: {
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0,
+                },
+                restTime: {
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0,
+                },
+            }
+            console.log(
+                "details reset"
+            )
+
+            setIngredient(defaultIngredientState);
         }
 
         const toggleShowFormDetails = () => {
             setShowAllFormDetails(!showAllFormDetails)
         }
 
-        const updateCookingTime = (unit, value) => {
+        const updateCookingTime = (unit, timeType, value) => {
             // Always pass a number to state, converting empty string to 0
             const numeric = value === '' ? 0 : parseInt(value);
             setIngredient(prev => ({
                 ...prev,
-                cookTime: {
-                    ...prev.cookTime,
+                [timeType]: {
+                    ...prev[timeType],
                     [unit]: numeric,
                 },
             }));
         };
+
+
 
     return (<>
     <form className="create-ingredient create-ingredient-form container" onSubmit={(e) => handleSubmit(e)}>
@@ -84,61 +120,32 @@ export default function CreateIngredient({recipe, setRecipe}) {
                             <input type='number' min={1} autoFocus name='quantity' id='quantity' className='create-ingredient-form' value={ingredient.quantity} onChange={(e) => {
                                 setIngredient({...ingredient, quantity: e.target.value})}}/>
                         </div>
-                        <div>
-                            <label htmlFor='prepTime'>Preparation time:</label>
-                            <input type='number' name='prepTime' id='prepTime' className='create-ingredient-form' value={ingredient.prepTime} onChange={(e) => {
-                                setIngredient({...ingredient, prepTime: e.target.value})}}/>
-                        </div>
+                        <TimeDurationInput name="Preparation time" inputClass="prep-time-form" ingredient={ingredient} setIngredient={setIngredient} timeType={"prepTime"}/>
                     </>
                 )
             }
             
-            <div>
-                <h4>Cooking time:</h4>
-                <div>
-                    <label htmlFor='hours'>Hours</label>
-                    <input 
-                        type='number'
-                        name='hours'
-                        id='hours'
-                        className='create-ingredient-form time-input'
-                        value={ingredient.cookTime.hours}
-                        onChange={(e) => updateCookingTime('hours', e.target.value)}
-                    />
-                    <label htmlFor='minutes'>Minutes</label>
-                    <input 
-                        type='number'
-                        name='minutes'
-                        id='minutes'
-                        className='create-ingredient-form time-input'
-                        value={ingredient.cookTime.minutes}
-                        onChange={(e) => updateCookingTime('minutes', e.target.value)}
-                    />
-                    <label htmlFor='seconds'>Seconds</label>
-                    <input 
-                        type='number'
-                        name='seconds'
-                        id='seconds'
-                        className='create-ingredient-form time-input'
-                        value={ingredient.cookTime.seconds}
-                        onChange={(e) => updateCookingTime('seconds', e.target.value)}
-                    />
-                    <button onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "+" : "-"}</button>
-                </div>
+            <div className='cooking-time'>
+                <TimeDurationInput name="Cooking time" inputClass="cook-time-form" ingredient={ingredient} setIngredient={setIngredient} timeType={"cookTime"}/>
+                
+                
+                
             </div>
 
             {
                 showAllFormDetails && (
                     <div>
-                        <label htmlFor='restTime'>Resting time:</label>
-                        <input type='number' name='restTime' id='restTime' className='create-ingredient-form' value={ingredient.restTime} onChange={(e) => {
-                            setIngredient({...ingredient, restTime: e.target.value})}}/>
-                </div>
+                        <TimeDurationInput name="Resting time" inputClass="rest-time-form" ingredient={ingredient} setIngredient={setIngredient} timeType={"restTime"}/>
+                    </div>
+
+                    
                 )
             }
             
             <div>
-                <button type="submit">Submit</button>
+                <button onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "+" : "-"}</button>
+                <button type="submit" className='create-ingredient-form form-btn submit-form' onClick={handleSubmit}>Submit</button>
+                <button type="reset" onClick={handleResetForm} className='create-ingredient-form form-btn clear-form'>Clear</button>
             </div>
         </div>
     </form></>);
