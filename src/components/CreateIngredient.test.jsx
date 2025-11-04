@@ -7,6 +7,8 @@
 
 3. Quantity, rest time, and prep time aren't included in the DOM on showAllFormDetails being set to false
 
+Test handle submit adds an item to the recipe state
+
 {BELOW WANT TO BE MOVED TO THE TIMEINPUT COMPONENT TEST FILES
 4. Seconds can't be set to 60 or higher
 

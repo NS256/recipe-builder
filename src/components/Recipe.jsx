@@ -7,14 +7,15 @@ export default function Recipe() {
     //  Object of cooking times
     //  each cooking time contains an array, 
     //  each array contains objects of each ingredient
-    const [recipe, setRecipe] = useState({});
-
     
+    const [ingredientList, setIngredientList] = useState([]);
+
+    const [recipe, setRecipe] = useState({});
     
 
     return (
         <div className=" container recipe-container">
-            <CreateIngredient recipe={recipe} setRecipe={setRecipe}/>
+            <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList}/>
         </div>
     );
 }

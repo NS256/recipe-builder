@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import { normalizeTime } from '../utils/IngredientUtilities';
+import { storeTime } from '../utils/TimeUtilities';
 import '../styles/CreateIngredient.css';
 import TimeDurationInput from './TimeDurationInput';
 
-export default function CreateIngredient({recipe, setRecipe}) {
+export default function CreateIngredient({recipe, setRecipe, ingredientList, setIngredientList}) {
 
-    //states to store each value from the form
+    //states to store each value from the form, cooktime, preptime and restTime should be stored in seconds
         const [ingredient,setIngredient] = useState({
             name: "",
             quantity: 1,
@@ -53,6 +54,28 @@ export default function CreateIngredient({recipe, setRecipe}) {
     
         const handleSubmit = (e) => {
             e.preventDefault();
+
+
+            //convert the cooktime to seconds
+            const cookTime = storeTime(ingredient.cookTime);
+            const prepTime = storeTime(ingredient.prepTime);
+            const restTime = storeTime(ingredient.restTime);
+
+            //add to ingredient list state
+
+            setIngredientList([
+                ...ingredientList,
+                {
+                    ...ingredient,
+                    prepTime,
+                    cookTime,
+                    restTime,
+                }
+            ])
+
+            handleResetForm();
+
+            // check if a cooktime of that many seconds is already in the recipe 
 
         }
     
