@@ -7,6 +7,7 @@
 
 3. Quantity, rest time, and prep time aren't included in the DOM on showAllFormDetails being set to false
 
+{BELOW WANT TO BE MOVED TO THE TIMEINPUT COMPONENT TEST FILES
 4. Seconds can't be set to 60 or higher
 
 5. Minutes can't be set to 60 or higher
@@ -17,5 +18,5 @@
 
 8. Hours can't be set to less than 0
 
-9. Test expected output from IngredientUtils/normalizeTime
+9. Test expected output from IngredientUtils/normalizeTime}
 */
