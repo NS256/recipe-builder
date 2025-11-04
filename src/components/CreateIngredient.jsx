@@ -54,7 +54,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
     
         const handleSubmit = (e) => {
             e.preventDefault();
-
+            //NEED TO ADD CHECK FOR IF FOOD ITEM ALREADY EXISTS ON SUBMIT (CONFIRM)
 
             //convert the cooktime to seconds
             const cookTime = storeTime(ingredient.cookTime);
