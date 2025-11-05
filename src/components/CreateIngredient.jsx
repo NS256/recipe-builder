@@ -66,10 +66,12 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
             setIngredientList([
                 ...ingredientList,
                 {
+                    id: (ingredientList.length +1),
                     ...ingredient,
                     prepTime,
                     cookTime,
                     restTime,
+
                 }
             ])
 
