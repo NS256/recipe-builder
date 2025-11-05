@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Ingredient.css'
 
 export default function Ingredient({action="cook", ingredient={},test}) {
     const cookingAction = {

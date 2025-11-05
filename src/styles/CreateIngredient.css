@@ -1,3 +1,7 @@
+.create-ingredient-container {
+    width: 100%;
+}
+
 .time-input-form {
     width: 100%
 }
@@ -5,9 +9,3 @@
 .time-input {
     width: 40px;
 }
-
-/*.form-btn.hide-details {
-    height: 30px;
-    width: 30px;
-}*/
-

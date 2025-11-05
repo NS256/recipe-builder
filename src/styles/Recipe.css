@@ -1,0 +1,22 @@
+.recipe {
+    text-align: left;
+    padding: 20px;
+}
+
+.ingredient-container {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--primary-beige);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.subtext {
+    color: grey;
+}
+
+/*Add media query for desktop only*/
+.recipe {
+    width: 60%;
+    margin: auto;
+}

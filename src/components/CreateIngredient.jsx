@@ -128,7 +128,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
 
 
 
-    return (<>
+    return (<div className="create-ingredient-container">
     <form className="create-ingredient create-ingredient-form container" onSubmit={(e) => handleSubmit(e)}>
         <h2>Add an ingredient...</h2>    
         <div className='create-ingredient create-ingredient-form inputs'>
@@ -173,5 +173,5 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
                 <button type="reset" onClick={handleResetForm} className='create-ingredient-form form-btn clear-form'>Clear</button>
             </div>
         </div>
-    </form></>);
+    </form></div>);
 }

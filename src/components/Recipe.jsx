@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Ingredient from './Ingredient';
 import CreateIngredient from './CreateIngredient';
+import '../styles/Recipe.css';
 
 export default function Recipe() {
     //create recipe state
