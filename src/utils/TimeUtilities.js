@@ -74,7 +74,7 @@ export const timeToString = (cookSeconds) => {
         cookTimeStr += `${(cookTimeStr !== "") ? ", ": ""}${cookTime.minutes} minute${cookTime.minutes === 1 ? '' : 's'}`;
     }
 
-    if (cookTime.seconds != 0 || (cookTime.hours === 0 || cookTime.minutes === 0)) {
+    if (cookTime.seconds != 0 || (cookTime.hours === 0 && cookTime.minutes === 0)) {
         // treat 1 as singular, everything else plural (including 0)
         cookTimeStr += `${(cookTimeStr !== "") ? ", ": ""}${cookTime.seconds} second${cookTime.seconds === 1 ? '' : 's'}`;
     }

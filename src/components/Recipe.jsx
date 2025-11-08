@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Ingredient from './Ingredient';
 import CreateIngredient from './CreateIngredient';
+import SetTimeInstruction from './SetTimeInstruction';
 import '../styles/Recipe.css';
+import { timeToString } from '../utils/TimeUtilities';
 
 export default function Recipe() {
     //create recipe state
@@ -61,12 +63,17 @@ export default function Recipe() {
         <div className=" container recipe-container">
             <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList}/>
             <div className='recipe'>
-                {
-                    Object.keys(recipe).sort((a, b) => Number(b) - Number(a)).map(key => (
-                        recipe[key].map((item) => {
-                            const ingredient = ingredientList.find(ingredient => ingredient.id === item.id);
-                            return <Ingredient key={item.id} action={item.type} ingredient={ingredient} test={key}/>;
-                        })
+                {   
+                    Object.keys(recipe).sort((a, b) => Number(b) - Number(a)).map((key, index) => (
+                        <React.Fragment key={key}>
+                            {recipe[key].map((item) => {
+                                const ingredient = ingredientList.find(ingredient => ingredient.id === item.id);
+                                return <Ingredient key={item.id} action={item.type} ingredient={ingredient} test={key}/>;
+                            })}
+                            {(Object.keys(recipe).length > index + 1) && 
+                                <SetTimeInstruction timeTillNext={timeToString(key - Number.parseInt(Object.keys(recipe).sort((a, b) => Number(b) - Number(a))[index + 1]))} /*Update to calculate correctly */ />
+                            }
+                        </React.Fragment>
                     ))
                 }
             </div>

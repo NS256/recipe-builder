@@ -134,7 +134,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
         <div className='create-ingredient create-ingredient-form inputs'>
             <div>
                 <label htmlFor='name'>Ingredient:</label>
-                <input type='text' autoFocus name='name' id='name' className='create-ingredient-form' value={ingredient.name} onChange={(e) => {
+                <input type='text' autoFocus name='name' id='name' className='create-ingredient-form' required value={ingredient.name} onChange={(e) => {
                     setIngredient({...ingredient, name: e.target.value})}}/>
             </div>
             {
