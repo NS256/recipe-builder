@@ -11,6 +11,8 @@ export default function Ingredient({action="cook", ingredient={},test}) {
 
     const timeType = `${action}Time`
 
+    console.log(timeType);
+
     console.log(ingredient);
     console.log(test);
 
