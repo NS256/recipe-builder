@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Header from './components/Header';
 import CookieWarning from './components/CookieWarning';
 import { CookieAllowedContext } from './contexts/CookieContext';
 import {cookiesAllowed} from './utils/CookieUtils';
 import Recipe from './components/Recipe';
+import Welcome from './components/Welcome';
 
 function App() {
 
@@ -20,7 +22,14 @@ function App() {
         <Header />
         <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
         <main>
-        <Recipe />
+          <Router>
+            <Routes>
+              <Route path="/" element={<Welcome />}/>
+              <Route path="/recipe" element={<Recipe />}/>
+            </Routes>
+            
+          </Router>
+        
         </main>
       </CookieAllowedContext.Provider>
     </>
