@@ -131,20 +131,20 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
     return (<div className="create-ingredient-container">
     <form className="create-ingredient create-ingredient-form container" onSubmit={(e) => handleSubmit(e)}>
         <h2>Add an ingredient...</h2>    
-        <div className='create-ingredient create-ingredient-form inputs'>
-            <div>
+        <div className='create-ingredient create-ingredient-form .text-input-container'>
+            <div className='text-input-container'>
                 <label htmlFor='name'>Ingredient:</label>
-                <input type='text' autoFocus name='name' id='name' className='create-ingredient-form' required value={ingredient.name} onChange={(e) => {
+                <input type='text' autoFocus name='name' id='name' className='create-ingredient-form text-input' required value={ingredient.name} onChange={(e) => {
                     setIngredient({...ingredient, name: e.target.value})}}/>
             </div>
             {
                 showAllFormDetails && (
                     <>
-                        <div>
+                        {/* {<div className='.text-input-container'>
                             <label htmlFor='quantity'>Quantity:</label>
-                            <input type='number' min={1} autoFocus name='quantity' id='quantity' className='create-ingredient-form' value={ingredient.quantity} onChange={(e) => {
+                            <input type='number' min={1} autoFocus name='quantity' id='quantity' className='create-ingredient-form text-input' value={ingredient.quantity} onChange={(e) => {
                                 setIngredient({...ingredient, quantity: e.target.value})}}/>
-                        </div>
+                        </div>} */}
                         <TimeDurationInput name="Preparation time" inputClass="prep-time-form" ingredient={ingredient} setIngredient={setIngredient} timeType={"prepTime"}/>
                     </>
                 )
@@ -168,7 +168,8 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
             }
             
             <div>
-                <button onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "+" : "-"}</button>
+                <button onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "Show all" : "Hide all"}</button>
+                <br />
                 <button type="submit" className='create-ingredient-form form-btn submit-form' onClick={handleSubmit}>Submit</button>
                 <button type="reset" onClick={handleResetForm} className='create-ingredient-form form-btn clear-form'>Clear</button>
             </div>

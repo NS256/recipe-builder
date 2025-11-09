@@ -2,10 +2,56 @@
     width: 100%;
 }
 
+.create-ingredient-container .text-input {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.create-ingredient-container .text-input-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.create-ingredient-container h2 {
+    font-size: 3em;
+}
+
+.create-ingredient-container h4 {
+    margin-bottom: 0px;
+}
+
+.create-ingredient-container button {
+    margin: 5px;
+}
+
 .time-input-form {
-    width: 100%
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .time-input {
     width: 40px;
+    margin: 8px;
+    margin-right: 10px;
 }
+
+@media (min-width: 601px) {
+  .form-btn {
+    width: 145px;
+}
+}
+
+@media (max-width: 600px) {
+ .form-btn {
+    width: 300px;
+}
+}
+
+
+
+.hide-details {
+    width: 300px;
+}
+
