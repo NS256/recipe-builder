@@ -168,7 +168,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
             }
             
             <div>
-                <button onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "Show all" : "Hide all"}</button>
+                <button type="button" onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "Show all" : "Hide all"}</button>
                 <br />
                 <button type="submit" className='create-ingredient-form form-btn submit-form' onClick={handleSubmit}>Submit</button>
                 <button type="reset" onClick={handleResetForm} className='create-ingredient-form form-btn clear-form'>Clear</button>
