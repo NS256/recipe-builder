@@ -10,7 +10,7 @@ export default function Welcome() {
     }
 
     return (<div className="welcome-container">
-        <img src="../../public/icon.png" className="welcome-img"/>
+        <img src="./icon.png" className="welcome-img"/>
         <h1>Welcome to Recipe Builder!</h1>
         <p>Ready to start building?</p>
         <button className="get-cooking" onClick={goToRecipe}>Let's get cooking!</button>
