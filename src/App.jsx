@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
@@ -7,6 +8,7 @@ import { CookieAllowedContext } from './contexts/CookieContext';
 import {cookiesAllowed} from './utils/CookieUtils';
 import Recipe from './components/Recipe';
 import Welcome from './components/Welcome';
+
 
 function App() {
 
