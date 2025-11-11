@@ -20,6 +20,7 @@ function App() {
 
   return (
     <>
+      <SpeedInsights/>
       <CookieAllowedContext.Provider value={cookiesAllowedState}>
         <Header />
         <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
