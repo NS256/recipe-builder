@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { normalizeTime } from '../utils/IngredientUtilities';
+import { normalizeTime } from '../utils/TimeUtilities';
 import { storeTime } from '../utils/TimeUtilities';
 import '../styles/CreateIngredient.css';
 import TimeDurationInput from './TimeDurationInput';

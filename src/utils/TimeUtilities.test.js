@@ -1,5 +1,5 @@
 import { describe } from "vitest";
-import {storeTime, recallTime, timeToString} from "./TimeUtilities";
+import {storeTime, recallTime, timeToString, normalizeTime} from "./TimeUtilities";
 
 describe("Time utilities", () => {
     it("storeTime successfully outputs an integer number of seconds",() => {
@@ -62,5 +62,36 @@ describe("Time utilities", () => {
         expect(timeToString(-3600)).toBe(-1);
         
         
+    });
+
+    it("normalizeTime corrects invalid time input", () => {
+        expect(normalizeTime({
+            hours: 0, minutes: 0, seconds: 90
+        })).toStrictEqual({
+            hours: 0, minutes: 1, seconds: 30
+        });
+        expect(normalizeTime({
+            hours: 0, minutes: 90, seconds: 90
+        })).toStrictEqual({
+            hours: 1, minutes: 31, seconds: 30
+        });
+        expect(normalizeTime({
+            hours: 1, minutes: 0, seconds: -1
+        })).toStrictEqual({
+            hours: 0, minutes: 59, seconds: 59
+        });
+    });
+
+    it("normalizeTime doesn't change valid time input", () => {
+        expect(normalizeTime({
+            hours: 0, minutes: 0, seconds: 0
+        })).toStrictEqual({
+            hours: 0, minutes: 0, seconds: 0
+        });
+        expect(normalizeTime({
+            hours: 1, minutes: 0, seconds: 1
+        })).toStrictEqual({
+            hours: 1, minutes: 0, seconds: 1
+        });
     });
 });
