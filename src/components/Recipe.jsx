@@ -68,7 +68,7 @@ export default function Recipe() {
                         <React.Fragment key={key}>
                             {recipe[key].map((item) => {
                                 const ingredient = ingredientList.find(ingredient => ingredient.id === item.id);
-                                return <Ingredient key={item.id} action={item.type} ingredient={ingredient} test={key}/>;
+                                return <Ingredient key={item.id} action={item.type} ingredient={ingredient} setIngredientList={setIngredientList}/>;
                             })}
                             {(Object.keys(recipe).length > index + 1) && 
                                 <SetTimeInstruction timeTillNext={timeToString(key - Number.parseInt(Object.keys(recipe).sort((a, b) => Number(b) - Number(a))[index + 1]))} /*Update to calculate correctly */ />

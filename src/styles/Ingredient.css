@@ -2,6 +2,11 @@
     text-align: left !important;
     justify-content: left;
     background-color: #ffffff;
+    position: relative;
+}
+
+.ingredient-container:hover {
+    box-shadow: inset;
 }
 
 .ingredient-element-container {
@@ -20,4 +25,30 @@
 
 .ingredient-element-container p {
     margin-bottom: 0px;
+}
+
+.ingredient-container .action-buttons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 10px;
+}
+
+.ingredient-container .action-buttons button {
+    width: 30px;
+    text-align: center !important;
+    justify-content: center;
+    padding: 0px;
+    background-color: transparent !important;
+}
+
+
+.ingredient-container .action-buttons .bi {
+    color: lightgray;
+    font-size: 1em;
+    
+}
+
+.ingredient-container .action-buttons .bi:hover {
+    background-color: #f9f9f9;
 }

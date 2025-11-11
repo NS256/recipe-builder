@@ -2,23 +2,27 @@ import React from 'react';
 import '../styles/Ingredient.css'
 import { timeToString } from '../utils/TimeUtilities';
 import { capitalize } from '../utils/TextUtils';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function Ingredient({action="cook", ingredient={},test}) {
+
+export default function Ingredient({action="cook", ingredient={},setIngredientList}) {
     const cookingAction = {
         prep: "preparing",
         cook: "cooking",
         rest: "resting",
     }
 
-    const timeType = `${action}Time`
+    const timeType = `${action}Time`;
 
-    console.log(timeType);
-
-    console.log(ingredient);
-    console.log(test);
+    const handleDelete = () => {
+        setIngredientList((prev) => prev.filter(element => element.id !== ingredient.id));
+    };
 
     return (
         <div className='recipe-ingredient ingredient-container'>
+            <div className='action-buttons'>
+                <button onClick={handleDelete}><i class="bi bi-trash"></i></button>
+            </div>
             <div className="ingredient-element-container container">
                 <h3>Start {cookingAction[action]} the {ingredient.name}</h3>
             </div>
