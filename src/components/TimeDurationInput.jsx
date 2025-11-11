@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { normalizeTime } from '../utils/IngredientUtilities';
+import { normalizeTime } from '../utils/TimeUtilities';
 
 export default function TimeDurationInput({name, inputClass, ingredient = {}, setIngredient, timeType}) {
 
