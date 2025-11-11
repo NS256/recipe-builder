@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/Ingredient.css'
 import { timeToString } from '../utils/TimeUtilities';
 import { capitalize } from '../utils/TextUtils';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 export default function Ingredient({action="cook", ingredient={},setIngredientList}) {

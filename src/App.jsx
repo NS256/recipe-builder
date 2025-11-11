@@ -1,7 +1,8 @@
-import { SpeedInsights } from "@vercel/speed-insights/react"
-import { useState } from 'react'
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './components/Header';
 import CookieWarning from './components/CookieWarning';
 import { CookieAllowedContext } from './contexts/CookieContext';
