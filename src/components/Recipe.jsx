@@ -57,6 +57,12 @@ export default function Recipe() {
         setRecipe(recipeObj);
 
      }, [ingredientList]);
+
+    const handleClear = () => {
+        console.log("Recipe cleared");
+        setIngredientList([]);
+
+    }
     
      console.log(Object.keys(recipe).sort((a, b) => Number(b) - Number(a)));
     return (
@@ -76,6 +82,12 @@ export default function Recipe() {
                         </React.Fragment>
                     ))
                 }
+                {(ingredientList.length > 0) && 
+                    <div className='clear-recipe-container'>
+                        <button className='clear-recipe' type='button' onClick={handleClear}>Clear recipe</button>
+                    </div>
+                }
+                
             </div>
         </div>
     );
