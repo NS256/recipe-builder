@@ -27,20 +27,7 @@
     margin-bottom: 0px;
 }
 
-.ingredient-container .action-buttons {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 10px;
-}
 
-.ingredient-container .action-buttons button {
-    width: 30px;
-    text-align: center !important;
-    justify-content: center;
-    padding: 0px;
-    background-color: transparent !important;
-}
 
 
 .ingredient-container .action-buttons .bi {
@@ -52,3 +39,19 @@
 .ingredient-container .action-buttons .bi:hover {
     background-color: #f9f9f9;
 }
+
+.ingredient-container .action-buttons {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin: 10px;
+    }
+
+    .ingredient-container .action-buttons button {
+        width: 30px;
+        text-align: center !important;
+        justify-content: center;
+        padding: 0px;
+        background-color: transparent !important;
+    }
+

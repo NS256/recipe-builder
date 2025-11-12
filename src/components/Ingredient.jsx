@@ -19,15 +19,16 @@ export default function Ingredient({action="cook", ingredient={},setIngredientLi
 
     return (
         <div className='recipe-ingredient ingredient-container'>
-            <div className='action-buttons'>
-                <button onClick={handleDelete}><i class="bi bi-trash"></i></button>
-            </div>
+            
             <div className="ingredient-element-container container">
                 <h3>Start {cookingAction[action]} the {ingredient.name}</h3>
             </div>
             <div className="ingredient-element-container container">
                 <p className='time-description subtext'>{
                     `${capitalize(action)} time: ${timeToString(ingredient[timeType])}`}</p>
+            </div>
+            <div className='action-buttons'>
+                <button onClick={handleDelete}><i class="bi bi-trash"></i></button>
             </div>
         </div>
     );

@@ -1,3 +1,4 @@
+
 .recipe {
     text-align: left;
     padding: 20px;
@@ -16,10 +17,7 @@
 }
 
 /*Add media query for desktop only*/
-.recipe {
-    width: 60%;
-    margin: auto;
-}
+
 
 .clear-recipe-container {
     width: 100%;
@@ -31,4 +29,25 @@
     width: 100%;
     background-color: var(--primary-red);
     color: white;
+}
+
+@media (min-width: 601px) {
+  .recipe {
+    width: 60%;
+    margin: auto;
+}
+}
+
+@media (max-width: 600px) {
+    .recipe-container {
+        width: 95%;
+        padding: 0px;
+    }
+
+    .recipe {
+        width: 100%;
+        margin: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
