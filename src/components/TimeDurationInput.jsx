@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { normalizeTime } from '../utils/TimeUtilities';
 
-export default function TimeDurationInput({name, inputClass, ingredient = {}, setIngredient, timeType}) {
+export default function TimeDurationInput({name= "", inputClass, ingredient = {}, setIngredient, timeType, showHeading = true}) {
+
+    console.log(ingredient);
 
     useEffect(() => {
     
@@ -35,7 +37,7 @@ export default function TimeDurationInput({name, inputClass, ingredient = {}, se
 
     return (
         <div className={`time-input-form ${inputClass}`}>
-            <h4>{name}:</h4>
+            {showHeading && <h4>{name}:</h4>}
                 <div>
                     <label htmlFor='hours'>Hours</label>
                     <input 

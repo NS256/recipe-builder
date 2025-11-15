@@ -31,7 +31,7 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .ingredient-container .action-buttons button {
@@ -43,9 +43,10 @@
 }
 
 
-.ingredient-container .action-buttons .bi {
+.action-buttons .bi {
     color: lightgray;
     font-size: 1em;
+    margin: 5px;
     
 }
 

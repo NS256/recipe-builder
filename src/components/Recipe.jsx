@@ -63,25 +63,58 @@ export default function Recipe() {
         setIngredientList([]);
 
     }
+
+    const updateIngredient = (newIngredient, action) => {
+        //return if the new ingredient is an empty object
+        switch (action) {
+            case "PUT":
+                if (Object.keys(newIngredient).length === 0) return;
+                setIngredientList([
+                    ...ingredientList.filter(el => el.id !== newIngredient.id),
+                    newIngredient
+                ])
+                break;
+            case "DEL":
+                setIngredientList((prev) => prev.filter(element => element.id !== newIngredient.id));
+                break;
+        }
+        
+    }
     
      console.log(Object.keys(recipe).sort((a, b) => Number(b) - Number(a)));
     return (
         <div className=" container recipe-container">
             <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList}/>
             <div className='recipe'>
-                {   
+                {  
                     Object.keys(recipe).sort((a, b) => Number(b) - Number(a)).map((key, index) => (
                         <React.Fragment key={key}>
                             {recipe[key].map((item) => {
                                 const ingredient = ingredientList.find(ingredient => ingredient.id === item.id);
-                                return <Ingredient key={item.id} action={item.type} ingredient={ingredient} setIngredientList={setIngredientList}/>;
+                                return <Ingredient key={item.id} action={item.type} ingredient={ingredient} updateIngredient={updateIngredient}/>;
                             })}
                             {(Object.keys(recipe).length > index + 1) && 
-                                <SetTimeInstruction timeTillNext={timeToString(key - Number.parseInt(Object.keys(recipe).sort((a, b) => Number(b) - Number(a))[index + 1]))} /*Update to calculate correctly */ />
+                                <SetTimeInstruction 
+                                timeTillNext={
+                                    timeToString(key - Number.parseInt(Object.keys(recipe)
+                                    .sort((a, b) => Number(b) - Number(a))[index + 1]))
+                                } />
                             }
                         </React.Fragment>
                     ))
                 }
+                {
+                    (ingredientList.length > 0 && 
+                    <>
+                        <SetTimeInstruction timeTillNext={
+                        timeToString(Number.parseInt(
+                            Object.keys(recipe)
+                        .sort((a, b) => Number(a) - Number(b))[0]))
+                } />
+                        <h2>Food's Ready!</h2>
+                    </>)
+                }
+                
                 {(ingredientList.length > 0) && 
                     <div className='clear-recipe-container'>
                         <button className='clear-recipe' type='button' onClick={handleClear}>Clear recipe</button>
