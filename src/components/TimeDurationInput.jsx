@@ -3,6 +3,8 @@ import { normalizeTime } from '../utils/TimeUtilities';
 
 export default function TimeDurationInput({name= "", inputClass, ingredient = {}, setIngredient, timeType, showHeading = true}) {
 
+    console.log(ingredient);
+
     useEffect(() => {
     
                 const normalizedTime = normalizeTime(ingredient[timeType]);

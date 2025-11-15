@@ -2,16 +2,16 @@ import React, {useEffect, useState} from 'react';
 import '../styles/Ingredient.css'
 import { timeToString } from '../utils/TimeUtilities';
 import { capitalize } from '../utils/TextUtils';
-import TimeDurationInput from './TimeDurationInput';
+import TimeDurationInputCompact from './TimeDurationInputCompact';
 
 
 export default function Ingredient({action="cook", ingredient={},updateIngredient}) {
     const [editMode, setEditMode] = useState(false);
-    const [newIngredient, setNewIngredient] = useState({});
+    const [newIngredient, setNewIngredient] = useState({...ingredient});
 
     useEffect(() => {
         //if edit mode is set to true, pull the ingredient into teh new ingredient state
-        if (editMode) setNewIngredient({...ingredient});
+        if (editMode) setNewIngredient(ingredient);
     }, [editMode]);
 
     const cookingAction = {
@@ -57,7 +57,9 @@ export default function Ingredient({action="cook", ingredient={},updateIngredien
             </div>
             <div className="ingredient-element-container container">
                 <p className='time-description subtext'>{
-                    `${capitalize(action)} time: `}{(editMode)? /*<TimeDurationInput ingredient={ingredient} timeType={cookingAction[action]}/>*/"" : timeToString(ingredient[timeType]) }</p>
+                    `${capitalize(action)} time: `}{(!editMode) && timeToString(ingredient[timeType]) }</p>
+                    {(editMode) &&
+                    <TimeDurationInputCompact ingredient={newIngredient} setIngredient={setNewIngredient} timeType={`${action}Time`} showHeading={false}/>}
             </div>
             {editMode && 
             <div className="ingredient-edit-buttons">
