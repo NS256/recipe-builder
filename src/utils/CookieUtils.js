@@ -1,7 +1,39 @@
 //functions relating to cookies creating, setting, removing, checking if they're allowed or not when re-opening
 
-const cookiesAllowedCookie = "__recipe-builder__cookies_allowed"
+const cookiesAllowedCookie = "__recipe-builder__cookies_allowed";
+const recipeCookie = "__recipe-builder__recipe";
+
+const getCookieObj = () => {
+    //get current cookies
+    let cookies = document.cookie;
+    //convert to array
+    cookies = cookies.split("; ");
+
+    //create an object to output cookie details
+    let cookieObj = {};
+
+    cookies.forEach(element => {
+        //for each cookie, split at the = and add items to cookieObj
+        let cookie = element.split("=");
+        cookieObj[cookie[0]] = cookie[1];
+    });
+
+    return cookieObj;
+};
 
 export function cookiesAllowed() {
     return document.cookie.includes(`${cookiesAllowedCookie}=true`)
+}
+
+export function setRecipeCookie(recipe) {
+    console.log(recipe);
+    if (recipe.length === 0) {
+        //clear the cookie if an empty array is passed
+        document.cookie = `${recipeCookie}=null`;
+    } else {
+        //pass the new ingredient list into the array
+        console.log("Setting cookie");
+        document.cookie = `${recipeCookie}=${JSON.stringify(recipe)}`;
+    }
+    
 }

@@ -4,6 +4,7 @@ import CreateIngredient from './CreateIngredient';
 import SetTimeInstruction from './SetTimeInstruction';
 import '../styles/Recipe.css';
 import { timeToString } from '../utils/TimeUtilities';
+import { setRecipeCookie } from '../utils/CookieUtils';
 
 export default function Recipe() {
     //create recipe state
@@ -57,11 +58,15 @@ export default function Recipe() {
         setRecipe(recipeObj);
 
      }, [ingredientList]);
+    
+    //update cookie on ingredient change
+    useEffect(() => {
+        setRecipeCookie({...ingredientList});
+    },[ingredientList]);
 
     const handleClear = () => {
         console.log("Recipe cleared");
         setIngredientList([]);
-
     }
 
     const updateIngredient = (newIngredient, action) => {
