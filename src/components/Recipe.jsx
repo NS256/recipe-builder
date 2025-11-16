@@ -61,7 +61,7 @@ export default function Recipe() {
     
     //update cookie on ingredient change
     useEffect(() => {
-        setRecipeCookie({...ingredientList});
+        setRecipeCookie(ingredientList);
     },[ingredientList]);
 
     const handleClear = () => {
