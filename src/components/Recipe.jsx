@@ -4,7 +4,7 @@ import CreateIngredient from './CreateIngredient';
 import SetTimeInstruction from './SetTimeInstruction';
 import '../styles/Recipe.css';
 import { timeToString } from '../utils/TimeUtilities';
-import { setRecipeCookie, recallRecipe } from '../utils/CookieUtils';
+import { setRecipeCookie, recallRecipeCookie } from '../utils/CookieUtils';
 
 export default function Recipe() {
     //create recipe state
@@ -17,7 +17,7 @@ export default function Recipe() {
 
     //update the ingredient list with the recipe saved in cookies
     useEffect(()=> {
-        setIngredientList(recallRecipe());
+        setIngredientList(recallRecipeCookie());
     },[]);
 
     //build the recipe state on the updating the ingredient state

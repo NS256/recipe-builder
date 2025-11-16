@@ -39,7 +39,7 @@ export function setRecipeCookie(recipe) {
 }
 
 //returns the ingredient list array or an empty array if none is found
-export function recallRecipe() {
+export function recallRecipeCookie() {
     const cookies = document.cookie;
 
     let recipe = [];
