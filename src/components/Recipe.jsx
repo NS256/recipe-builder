@@ -4,7 +4,7 @@ import CreateIngredient from './CreateIngredient';
 import SetTimeInstruction from './SetTimeInstruction';
 import '../styles/Recipe.css';
 import { timeToString } from '../utils/TimeUtilities';
-import { setRecipeCookie } from '../utils/CookieUtils';
+import { setRecipeCookie, recallRecipe } from '../utils/CookieUtils';
 
 export default function Recipe() {
     //create recipe state
@@ -15,8 +15,14 @@ export default function Recipe() {
 
     const [recipe, setRecipe] = useState({});
 
+    //update the ingredient list with the recipe saved in cookies
+    useEffect(()=> {
+        setIngredientList(recallRecipe());
+    },[]);
+
     //build the recipe state on the updating the ingredient state
      useEffect(() => {
+        console.log(ingredientList);
         let recipeObj = {};
 
         /*recipe obj will store the prep, cook and rest times but they'll each be a sum so fit into the recipe without adding extra states */

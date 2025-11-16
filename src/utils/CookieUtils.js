@@ -37,3 +37,23 @@ export function setRecipeCookie(recipe) {
     }
     
 }
+
+//returns the ingredient list array or an empty array if none is found
+export function recallRecipe() {
+    const cookies = document.cookie;
+
+    let recipe = [];
+
+    if (cookies.includes(recipeCookie)){
+        let cookie = cookies.split(`${recipeCookie}=`)[1];
+        cookie = cookie.split("; ")[0];
+
+        if (cookie != "null"){
+            recipe = cookie;
+        }
+
+        
+    }
+
+    return recipe;
+}
