@@ -24,6 +24,7 @@ function App() {
       <SpeedInsights/>
       <CookieAllowedContext.Provider value={cookiesAllowedState}>
         <Header />
+        <img src="/chopping-board-background.jpg" className="background-image"/>
         <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
         <main>
           <Router>

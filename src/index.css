@@ -6,16 +6,16 @@
   /* overflow: hidden; */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-bg-color: #F0F0D8;
+  --primary-bg-color: #f0f0d8e9;
   --primary-purple: #60495A;
-  --primary-green: #498467;
+  /* --primary-green: #498467; */
+  --primary-green: #929D87;
   --primary-red: #B84C3A;
   --primary-yellow: #DAA520;
   --primary-beige: #D2B48C;

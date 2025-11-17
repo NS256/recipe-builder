@@ -1,5 +1,6 @@
 .create-ingredient-container {
     width: 100%;
+    background-color: var(--primary-green);
 }
 
 .create-ingredient-container .text-input {
