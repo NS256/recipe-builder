@@ -11,7 +11,7 @@ export default function Recipe() {
     //  Object of cooking times in seconds
     //  Each time contains an array of ids of items with that cooking time
     
-    const [ingredientList, setIngredientList] = useState([]);
+    const [ingredientList, setIngredientList] = useState(() => recallRecipeCookie() || []);
 
     const [recipe, setRecipe] = useState({});
 

@@ -47,10 +47,10 @@ export function recallRecipeCookie() {
     if (cookies.includes(recipeCookie)){
         let cookie = cookies.split(`${recipeCookie}=`)[1];
         cookie = cookie.split("; ")[0];
-
         if (cookie != "null"){
-            recipe = cookie;
+            recipe = JSON.parse(cookie);
         }
+
 
         
     }
