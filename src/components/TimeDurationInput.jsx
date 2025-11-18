@@ -39,6 +39,7 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
         <div className={`time-input-form ${inputClass}`}>
             {showHeading && <h4>{name}:</h4>}
                 <div>
+                    <span>
                     <label htmlFor='hours'>Hours</label>
                     <input 
                         type='number'
@@ -48,6 +49,8 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                         value={ingredient[timeType].hours}
                         onChange={(e) => updateTime('hours', e.target.value)}
                     />
+                    </span>
+                    <span>
                     <label htmlFor='minutes'>Minutes</label>
                     <input 
                         type='number'
@@ -57,6 +60,8 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                         value={ingredient[timeType].minutes}
                         onChange={(e) => updateTime('minutes', e.target.value)}
                     />
+                    </span>
+                    <span>
                     <label htmlFor='seconds'>Seconds</label>
                     <input 
                         type='number'
@@ -66,6 +71,7 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                         value={ingredient[timeType].seconds}
                         onChange={(e) => updateTime('seconds', e.target.value)}
                     />
+                    </span>
                 </div>
         </div>
         )

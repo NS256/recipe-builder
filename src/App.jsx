@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <img src="/chopping-board-background.jpg" className="background-image"/>
+      <img src="/newBackgroundImage.jpg" className="background-image"/>
       <div className="app-container">
         <SpeedInsights/>
         <CookieAllowedContext.Provider value={cookiesAllowedState}>

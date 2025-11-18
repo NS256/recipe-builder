@@ -1,12 +1,17 @@
+
+
 .recipe {
     text-align: left;
     padding: 20px;
+    border-color: var(--border-grey);
+    border-style: solid;
+    border-radius: 10px;
 }
 
 .ingredient-container {
     border-width: 1px;
     border-style: solid;
-    border-color: var(--primary-beige);
+    border-color: var(--border-dark-grey);
     border-radius: 10px;
     padding: 10px;
 }
@@ -19,6 +24,12 @@
 .recipe {
     width: 60%;
     margin: auto;
+}
+
+.timer-instruction h3 {
+    padding: 20px;
+    margin-left: 50px;
+    text-align: left;
 }
 
 .clear-recipe-container {
