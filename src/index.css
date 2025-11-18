@@ -12,17 +12,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-bg-color: #f0f0d8e9;
+  --primary-bg-color: #f0f0d8/*d4*/;
   --primary-purple: #60495A;
   /* --primary-green: #498467; */
-  --primary-green: #929D87;
+  /* --primary-green: #929D87; */
+  --primary-green: #6b8056;
   --primary-red: #B84C3A;
   --primary-yellow: #DAA520;
   --primary-beige: #D2B48C;
-}
-
-main {
-  padding-top: 70px;
+  --btn-green: #498467;
+  --primary-cream: #fffff5;
 }
 
 
@@ -45,6 +44,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
   padding: 0px;
+}
+
+
+
+#root {
+  z-index: 1;
 }
 
 h1 {

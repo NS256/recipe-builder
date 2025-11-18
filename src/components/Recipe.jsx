@@ -94,7 +94,7 @@ export default function Recipe() {
     
      console.log(Object.keys(recipe).sort((a, b) => Number(b) - Number(a)));
     return (
-        <div className=" container recipe-container">
+        <div className="recipe-container">
             <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList}/>
             <div className='recipe'>
                 {  

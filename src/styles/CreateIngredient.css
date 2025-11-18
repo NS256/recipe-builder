@@ -1,6 +1,14 @@
 .create-ingredient-container {
-    width: 100%;
+    /* width: 100%; */
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-radius: 10px;
     background-color: var(--primary-green);
+    color: var(--primary-cream);
+    box-shadow: 5px 5px 10px #00000025;
 }
 
 .create-ingredient-container .text-input {
@@ -39,15 +47,24 @@
 }
 
 @media (min-width: 601px) {
-  .form-btn {
-    width: 145px;
-}
+    .create-ingredient-container {
+        width: 60%;
+        min-width: 570px;
+    }
+
+    .form-btn {
+        width: 145px;
+    }
 }
 
 @media (max-width: 600px) {
- .form-btn {
-    width: 300px;
-}
+    .create-ingredient-container {
+        width: 95%;
+    }
+
+    .form-btn {
+        width: 300px;
+    }
 }
 
 
