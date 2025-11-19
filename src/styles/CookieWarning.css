@@ -9,7 +9,7 @@
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
-    border-color: var(--primary-beige);
+    border-color: var(--border-color);
     padding: 10px;
     max-width: 600px;
     z-index: 100;
@@ -45,9 +45,9 @@
 
 
 #allow-cookies {
-    background-color: var(--primary-green);
+    background-color: var(--btn-green);
 }
 
 #deny-cookies {
-    background-color: var(--primary-red);
+    background-color: var(--btn-red);
 }
