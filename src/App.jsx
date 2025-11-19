@@ -1,5 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -9,6 +9,7 @@ import { CookieAllowedContext } from './contexts/CookieContext';
 import {cookiesAllowed} from './utils/CookieUtils';
 import Recipe from './components/Recipe';
 import Welcome from './components/Welcome';
+import ErrorAlert from "./components/ErrorAlert";
 
 
 function App() {
@@ -17,10 +18,35 @@ function App() {
   // console.log(cookiesAllowed());
 
   //state to feed into the Cookies allowed context
-    const [cookiesAllowedState,setCookiesAllowedState] = useState(cookiesAllowed);
+  const [cookiesAllowedState,setCookiesAllowedState] = useState(cookiesAllowed);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const createError = (message) => {
+    if (!message) return;
+
+    setErrorMessage(message);
+
+    // clear any previous timeout
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+    // clear message after 5s once
+    timeoutRef.current = setTimeout(() => {
+      setErrorMessage('');
+      timeoutRef.current = null;
+    }, 3000);
+  }
 
   return (
     <>
+      {(errorMessage.length > 0) && <ErrorAlert message={errorMessage} />}
       <img src="/newBackgroundImage.jpg" className="background-image"/>
       <div className="app-container">
         <SpeedInsights/>
@@ -31,7 +57,7 @@ function App() {
             <Router>
               <Routes>
                 <Route path="/" element={<Welcome />}/>
-                <Route path="/recipe" element={<Recipe cookiesAllowed={cookiesAllowedState} />}/>
+                <Route path="/recipe" element={<Recipe cookiesAllowed={cookiesAllowedState} setErrorMessage={createError} />}/>
               </Routes>
               
             </Router>

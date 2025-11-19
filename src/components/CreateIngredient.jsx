@@ -4,7 +4,7 @@ import { storeTime } from '../utils/TimeUtilities';
 import '../styles/CreateIngredient.css';
 import TimeDurationInput from './TimeDurationInput';
 
-export default function CreateIngredient({recipe, setRecipe, ingredientList, setIngredientList}) {
+export default function CreateIngredient({recipe, setRecipe, ingredientList, setIngredientList, setErrorMessage}) {
 
     //states to store each value from the form, cooktime, preptime and restTime should be stored in seconds
         const [ingredient,setIngredient] = useState({
@@ -77,7 +77,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
 
                 handleResetForm();
             } else {
-                window.alert("Oops! Looks like your ingredient doesn't have any cooking time.\nTry adding a Preparation, Cooking or Resting time and adding your ingredient to the recipe again.");
+                setErrorMessage("Looks like your ingredient doesn't have any preparation, cooking or resting time.");
             }
 
         }

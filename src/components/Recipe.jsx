@@ -6,7 +6,7 @@ import '../styles/Recipe.css';
 import { timeToString } from '../utils/TimeUtilities';
 import { setRecipeCookie, recallRecipeCookie } from '../utils/CookieUtils';
 
-export default function Recipe({cookiesAllowed = false}) {
+export default function Recipe({cookiesAllowed = false, setErrorMessage}) {
     //create recipe state
     //  Object of cooking times in seconds
     //  Each time contains an array of ids of items with that cooking time
@@ -95,7 +95,7 @@ export default function Recipe({cookiesAllowed = false}) {
      console.log(Object.keys(recipe).sort((a, b) => Number(b) - Number(a)));
     return (
         <div className="recipe-container">
-            <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList}/>
+            <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList} setErrorMessage={setErrorMessage}/>
             <div className='recipe'>
                 {ingredientList.length > 0 && 
                     <h2>Recipe:</h2>
