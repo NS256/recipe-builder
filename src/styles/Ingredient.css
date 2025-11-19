@@ -22,6 +22,7 @@
 
 .ingredient-element-container h3 {
     margin-bottom: 0px;
+    color: var(--secondary-txt-grey);
 }
 
 .ingredient-element-container p {

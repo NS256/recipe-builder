@@ -30,11 +30,11 @@ header {
 }
 
 .navbar-light .navbar-brand {
-  color: var(--primary-purple);
+  color: var(--primary-txt-grey);
 }
 
 .navbar-light .navbar-brand:hover {
-  color: var(--primary-purple);
+  color: var(--primary-txt-grey);
   text-shadow: 1px;
 }
 
