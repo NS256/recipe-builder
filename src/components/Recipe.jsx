@@ -6,7 +6,7 @@ import '../styles/Recipe.css';
 import { timeToString } from '../utils/TimeUtilities';
 import { setRecipeCookie, recallRecipeCookie } from '../utils/CookieUtils';
 
-export default function Recipe() {
+export default function Recipe({cookiesAllowed = false}) {
     //create recipe state
     //  Object of cooking times in seconds
     //  Each time contains an array of ids of items with that cooking time
@@ -67,7 +67,7 @@ export default function Recipe() {
     
     //update cookie on ingredient change
     useEffect(() => {
-        setRecipeCookie(ingredientList);
+        if (cookiesAllowed) setRecipeCookie(ingredientList);
     },[ingredientList]);
 
     const handleClear = () => {
