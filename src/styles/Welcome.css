@@ -22,12 +22,18 @@
 
 .welcome-container .get-cooking {
     font-size: 2em;
-    background-color: var(--primary-green);
+    background-color: var(--btn-green);
     color: white;
 }
 
+.welcome-container .get-cooking:hover {
+    box-shadow: 1px 1px 5px #00000025;
+    border-color: #00000000;
+    border-style: initial;
+}
+
 @media (min-width: 601px) {
-  main {
+  .welcome-container {
     width: 80%;
   }
 }

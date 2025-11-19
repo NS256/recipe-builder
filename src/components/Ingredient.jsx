@@ -53,7 +53,7 @@ export default function Ingredient({action="cook", ingredient={},updateIngredien
                 </button>
             </div>
             <div className="ingredient-element-container container">
-                <h3>Start {cookingAction[action]} the {(editMode) ? <input type='text' value={newIngredient.name} onChange={(e) => setNewIngredient({...newIngredient, name: e.target.value })}/> : ingredient.name}</h3>
+                <h3>Start {cookingAction[action]} the {(editMode) ? <input type='text' name="item-name" value={newIngredient.name} onChange={(e) => setNewIngredient({...newIngredient, name: e.target.value })}/> : ingredient.name}</h3>
             </div>
             <div className="ingredient-element-container container">
                 <p className='time-description subtext'>{

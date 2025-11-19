@@ -1,5 +1,17 @@
 .create-ingredient-container {
-    width: 100%;
+    /* width: 100%; */
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    border-color: var(--border-color);
+    border-width: 3px;
+    border-style: solid;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-txt-grey);
+    box-shadow: 5px 5px 10px #00000025;
 }
 
 .create-ingredient-container .text-input {
@@ -13,6 +25,7 @@
 }
 
 .create-ingredient-container h2 {
+    
     font-size: 3em;
 }
 
@@ -25,10 +38,11 @@
 }
 
 .time-input-form {
-    margin: 20px;
+    /* margin: 20px; */
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
+    translate: 1%;
 }
 
 .time-input {
@@ -37,16 +51,54 @@
     margin-right: 10px;
 }
 
-@media (min-width: 601px) {
-  .form-btn {
-    width: 145px;
+.create-ingredient-container .form-btn {
+    color: white;
 }
+
+.create-ingredient-container .form-btn:hover {
+    font-weight: 600;
+    box-shadow: 2px 2px 5px #00000025;
+    border-color: var(--border-grey);
+}
+
+.create-ingredient-container .submit-form {
+    background-color: var(--btn-green);
+    color: white;
+}
+
+.create-ingredient-container .clear-form {
+    background-color: var(--btn-red);
+    color: white;
+}
+
+.create-ingredient-container .hide-details {
+    border-color: var(--border-color);
+    border-style: solid;
+    border-width: 1px;
+    color: var(--secondary-txt-grey);
+}
+
+
+
+@media (min-width: 601px) {
+    .create-ingredient-container {
+        width: 60%;
+        min-width: 570px;
+    }
+
+    .form-btn {
+        width: 145px;
+    }
 }
 
 @media (max-width: 600px) {
- .form-btn {
-    width: 300px;
-}
+    .create-ingredient-container {
+        width: 95%;
+    }
+
+    .form-btn {
+        width: 300px;
+    }
 }
 
 

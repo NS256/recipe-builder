@@ -21,21 +21,24 @@ function App() {
 
   return (
     <>
-      <SpeedInsights/>
-      <CookieAllowedContext.Provider value={cookiesAllowedState}>
-        <Header />
-        <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
-        <main>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Welcome />}/>
-              <Route path="/recipe" element={<Recipe />}/>
-            </Routes>
-            
-          </Router>
-        
-        </main>
-      </CookieAllowedContext.Provider>
+      <img src="/newBackgroundImage.jpg" className="background-image"/>
+      <div className="app-container">
+        <SpeedInsights/>
+        <CookieAllowedContext.Provider value={cookiesAllowedState}>
+          <Header />
+          <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
+          <main>
+            <Router>
+              <Routes>
+                <Route path="/" element={<Welcome />}/>
+                <Route path="/recipe" element={<Recipe />}/>
+              </Routes>
+              
+            </Router>
+          
+          </main>
+        </CookieAllowedContext.Provider>
+      </div>
     </>
   )
 }

@@ -130,7 +130,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
 
     return (<div className="create-ingredient-container">
     <form className="create-ingredient create-ingredient-form container" onSubmit={(e) => handleSubmit(e)}>
-        <h2>Add an ingredient...</h2>    
+        <h2>Add an Ingredient</h2>    
         <div className='create-ingredient create-ingredient-form .text-input-container'>
             <div className='text-input-container'>
                 <label htmlFor='name'>Ingredient:</label>
@@ -170,7 +170,7 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
             <div>
                 <button type="button" onClick={toggleShowFormDetails} className='create-ingredient-form form-btn hide-details'>{(!showAllFormDetails)? "Show all" : "Hide all"}</button>
                 <br />
-                <button type="submit" className='create-ingredient-form form-btn submit-form' onClick={handleSubmit}>Submit</button>
+                <button type="submit" className='create-ingredient-form form-btn submit-form' onClick={handleSubmit}>Save</button>
                 <button type="reset" onClick={handleResetForm} className='create-ingredient-form form-btn clear-form'>Clear</button>
             </div>
         </div>

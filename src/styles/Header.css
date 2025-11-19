@@ -1,6 +1,6 @@
 header {
   width: 100vw;
-  background-color: var(--primary-beige);
+  background-color: var(--primary-bg-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -9,14 +9,33 @@ header {
   align-items: center; /* centers navbar vertically */
   padding: 0 16px;
   box-sizing: border-box;
+  /* font-family: "adobe-handwriting-ernie", sans-serif;
+  font-weight: 600;
+  font-style:normal; */
+  font-family: "Fasthand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  /* font-size: 100px; */
+  border-bottom-color: var(--border-grey);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
 .navbar {
   display: flex;
-  justify-content: flex-start; /* keep horizontal positioning */
+  justify-content: center; /* keep horizontal positioning */
   width: 100%;
   height: 100%;
   align-items: center; /* ensure children are vertically centered */
+}
+
+.navbar-light .navbar-brand {
+  color: var(--primary-txt-grey);
+}
+
+.navbar-light .navbar-brand:hover {
+  color: var(--primary-txt-grey);
+  text-shadow: 1px;
 }
 
 .navbar-brand {
@@ -30,13 +49,6 @@ header {
   width: auto;
 }
 
-header h1 {
-  color: var(--primary-purple);
-}
-
-header h1 {
-    color: var(--primary-purple);
-}
 
 @media (min-width: 601px) {
   

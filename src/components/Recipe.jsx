@@ -94,9 +94,12 @@ export default function Recipe() {
     
      console.log(Object.keys(recipe).sort((a, b) => Number(b) - Number(a)));
     return (
-        <div className=" container recipe-container">
+        <div className="recipe-container">
             <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList}/>
             <div className='recipe'>
+                {ingredientList.length > 0 && 
+                    <h2>Recipe:</h2>
+                }
                 {  
                     Object.keys(recipe).sort((a, b) => Number(b) - Number(a)).map((key, index) => (
                         <React.Fragment key={key}>
