@@ -13,8 +13,8 @@ import Welcome from './components/Welcome';
 
 function App() {
 
-  console.log("App loaded");
-  console.log(cookiesAllowed());
+  // console.log("App loaded");
+  // console.log(cookiesAllowed());
 
   //state to feed into the Cookies allowed context
     const [cookiesAllowedState,setCookiesAllowedState] = useState(cookiesAllowed);
@@ -31,7 +31,7 @@ function App() {
             <Router>
               <Routes>
                 <Route path="/" element={<Welcome />}/>
-                <Route path="/recipe" element={<Recipe />}/>
+                <Route path="/recipe" element={<Recipe cookiesAllowed={cookiesAllowedState} />}/>
               </Routes>
               
             </Router>
