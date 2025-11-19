@@ -111,6 +111,12 @@
         width: 100%;
         text-align: center;
     }
+
+    .edit-ingredient-input.edit-ingredient-name {
+        width: 95%;
+        margin: auto;
+        text-align: center;
+    }
 }
 
 
