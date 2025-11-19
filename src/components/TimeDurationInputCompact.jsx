@@ -82,6 +82,7 @@ export default function TimeDurationInputCompact({name= "", inputClass, ingredie
                         value={newTime.hours}
                         onChange={(e) => updateTime('hours', e.target.value)}
                     />
+                        <br className='mob-only'/>
                     <label htmlFor='minutes'>Minutes</label>
                     <input 
                         type='number'
@@ -91,6 +92,7 @@ export default function TimeDurationInputCompact({name= "", inputClass, ingredie
                         value={newTime.minutes}
                         onChange={(e) => updateTime('minutes', e.target.value)}
                     />
+                        <br className='mob-only'/>
                     <label htmlFor='seconds'>Seconds</label>
                     <input 
                         type='number'
