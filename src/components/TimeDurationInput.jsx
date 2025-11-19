@@ -50,6 +50,7 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                         onChange={(e) => updateTime('hours', e.target.value)}
                     />
                     </span>
+                        <br className='mob-only'/>
                     <span>
                     <label htmlFor='minutes'>Minutes</label>
                     <input 
@@ -61,6 +62,7 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                         onChange={(e) => updateTime('minutes', e.target.value)}
                     />
                     </span>
+                        <br className='mob-only'/>
                     <span>
                     <label htmlFor='seconds'>Seconds</label>
                     <input 
