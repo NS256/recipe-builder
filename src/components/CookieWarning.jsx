@@ -30,7 +30,7 @@ export default function CookieWarning({ cookiesAllowedState, setCookiesAllowedSt
                     </div>
                     <div className='container cookie-warn cookie-warn-body'>
                         <p>
-                            <strong>Hey there!</strong> To give you the best experience and temporarily store your last recipe we need to use cookies. By clicking "Accept All," you consent to our use of cookies.
+                            <strong>Hey there!</strong> To give you the best experience and temporarily store your last recipe we need to use cookies. By clicking "Accept All", you consent to our use of cookies.
                         </p>
                     </div>
                     <div className='container cookie-warn cookie-warn-buttons'>
