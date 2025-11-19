@@ -1,6 +1,5 @@
 .ingredient-container {
     margin: auto;
-    text-align: left !important;
     justify-content: left;
     background-color: #ffffff;
     position: relative;
@@ -103,12 +102,14 @@
 @media (min-width: 601px) {
     .ingredient-container {
         width: 80%;
+        text-align: left !important;
     }
 }
 
 @media (max-width: 600px) {
     .ingredient-container {
         width: 100%;
+        text-align: center;
     }
 }
 
