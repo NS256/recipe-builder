@@ -62,22 +62,23 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
             const restTime = storeTime(ingredient.restTime);
 
             //add to ingredient list state
+            if ((cookTime + prepTime + restTime) > 0) {
+                setIngredientList([
+                    ...ingredientList,
+                    {
+                        id: Date.now(),
+                        ...ingredient,
+                        prepTime,
+                        cookTime,
+                        restTime,
 
-            setIngredientList([
-                ...ingredientList,
-                {
-                    id: Date.now(),
-                    ...ingredient,
-                    prepTime,
-                    cookTime,
-                    restTime,
+                    }
+                ])
 
-                }
-            ])
-
-            handleResetForm();
-
-            // check if a cooktime of that many seconds is already in the recipe 
+                handleResetForm();
+            } else {
+                window.alert("Oops! Looks like your ingredient doesn't have any cooking time.\nTry adding a Preparation, Cooking or Resting time and adding your ingredient to the recipe again.");
+            }
 
         }
     
