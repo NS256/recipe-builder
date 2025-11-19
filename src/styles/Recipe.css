@@ -3,9 +3,10 @@
 .recipe {
     text-align: left;
     padding: 20px;
-    border-color: var(--border-grey);
+    /* border-color: var(--border-grey);
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 10px; */
+    width: 60%
 }
 
 .ingredient-container {
@@ -14,6 +15,7 @@
     border-color: var(--border-dark-grey);
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 2px 2px 8px #00000025;
 }
 
 .subtext {
@@ -22,14 +24,24 @@
 
 /*Add media query for desktop only*/
 .recipe {
-    width: 60%;
     margin: auto;
+}
+
+.recipe h2 {
+    text-align: center;
+    padding: 20px;
+    font-family: "Fasthand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
 }
 
 .timer-instruction h3 {
     padding: 20px;
-    margin-left: 50px;
-    text-align: left;
+    /* margin-left: 100px; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .clear-recipe-container {
@@ -42,4 +54,17 @@
     width: 100%;
     background-color: var(--primary-red);
     color: white;
+}
+
+@media (max-width: 600px) {
+    .recipe {
+        width: 95%;
+    }
+}
+
+@media (min-width: 601px) {
+    .recipe {
+        width: 60%;
+        min-width: 570px;
+    }
 }
