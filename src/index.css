@@ -143,10 +143,18 @@ button:focus-visible {
     .mob-only {
       display: none;
     }
+
+    .desk-only {
+      display: bloc;
+    }
 }
 
 @media (max-width: 600px) {
-  .mob-only {
-      display: block;
+    .mob-only {
+        display: block;
+    }
+
+    .desk-only {
+        display: none;
     }
 }
