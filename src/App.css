@@ -19,7 +19,7 @@ main {
   min-height: calc(100vw / (2952/4428)); /*bkground image size - 2952 × 4428*/
   position: fixed;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%);
   top: 0px;
   opacity: 3%;
   z-index: 0; 
