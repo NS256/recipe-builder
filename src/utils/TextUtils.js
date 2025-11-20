@@ -1,6 +1,6 @@
 export const capitalize = (inputStr) => {
     //split the inputStr into each individual word
-    const words = inputStr.toLowerCase().split(" ");
+    const words = inputStr.split(" ");
 
     //create output string to store each capitalized word
     let wordsCapitalized = words.map(word => {
