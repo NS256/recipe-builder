@@ -21,32 +21,15 @@ function App() {
   const [cookiesAllowedState,setCookiesAllowedState] = useState(cookiesAllowed);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
   const createError = (message) => {
     if (!message) return;
 
     setErrorMessage(message);
-
-    // clear any previous timeout
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-    // clear message after 5s once
-    timeoutRef.current = setTimeout(() => {
-      setErrorMessage('');
-      timeoutRef.current = null;
-    }, 3000);
   }
 
   return (
     <>
-      {(errorMessage.length > 0) && <ErrorAlert message={errorMessage} />}
+      {(errorMessage.length > 0) && <ErrorAlert message={errorMessage} onClose={() => setErrorMessage('')} />}
       <img src="/newBackgroundImage.jpg" className="background-image"/>
       <div className="app-container">
         <SpeedInsights/>

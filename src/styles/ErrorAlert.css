@@ -8,6 +8,25 @@
     z-index: 1000;
 }
 
+/* Slide-in / slide-out animations */
+.slide-in {
+    animation: slideDown 250ms ease-out forwards;
+}
+
+.slide-out {
+    animation: slideUp 250ms ease-in forwards;
+}
+
+@keyframes slideDown {
+    0% { transform: translateX(-50%) translateY(-120%); opacity: 0; }
+    100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(-120%); opacity: 0; }
+}
+
 .alert {
     border-color: var(--border-dark-grey);
     border-style: solid;
