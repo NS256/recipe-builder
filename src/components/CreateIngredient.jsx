@@ -110,9 +110,6 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
                     seconds: 0,
                 },
             }
-            console.log(
-                "details reset"
-            )
 
             setIngredient(defaultIngredientState);
         }

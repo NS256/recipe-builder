@@ -26,7 +26,6 @@ export function cookiesAllowed() {
 }
 
 export function setRecipeCookie(recipe) {
-    console.log(recipe);
     if (recipe.length === 0) {
         //clear the cookie if an empty array is passed
         document.cookie = `${recipeCookie}=null`;

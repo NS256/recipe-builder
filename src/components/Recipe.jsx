@@ -94,7 +94,6 @@ export default function Recipe({cookiesAllowed = false, setErrorMessage}) {
         
     }
     
-     console.log(Object.keys(recipe).sort((a, b) => Number(b) - Number(a)));
     return (
         <div className="recipe-container">
             <CreateIngredient recipe={recipe} setRecipe={setRecipe} ingredientList={ingredientList} setIngredientList={setIngredientList} setErrorMessage={setErrorMessage}/>
