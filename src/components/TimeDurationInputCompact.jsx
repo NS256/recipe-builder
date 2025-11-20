@@ -73,7 +73,7 @@ export default function TimeDurationInputCompact({name= "", inputClass, ingredie
         <div className={`time-input-form ${inputClass}`}>
             {showHeading && <h4>{name}:</h4>}
                 <div>
-                    <label htmlFor='hours'>Hours</label>
+                    <label htmlFor='hours'>H<span className='desk-only'>ours</span></label>
                     <input 
                         type='number'
                         name='hours'
@@ -82,8 +82,7 @@ export default function TimeDurationInputCompact({name= "", inputClass, ingredie
                         value={newTime.hours}
                         onChange={(e) => updateTime('hours', e.target.value)}
                     />
-                        <br className='mob-only'/>
-                    <label htmlFor='minutes'>Minutes</label>
+                    <label htmlFor='minutes'>M<span className='desk-only'>inutes</span></label>
                     <input 
                         type='number'
                         name='minutes'
@@ -92,8 +91,7 @@ export default function TimeDurationInputCompact({name= "", inputClass, ingredie
                         value={newTime.minutes}
                         onChange={(e) => updateTime('minutes', e.target.value)}
                     />
-                        <br className='mob-only'/>
-                    <label htmlFor='seconds'>Seconds</label>
+                    <label htmlFor='seconds'>S<span className='desk-only'>econds</span></label>
                     <input 
                         type='number'
                         name='seconds'

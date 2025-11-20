@@ -40,7 +40,7 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
             {showHeading && <h4>{name}:</h4>}
                 <div className='time-container'>
                     <span>
-                    
+                        <label htmlFor='hours'>H<span className='desk-only time-input-label'>ours</span></label>
                         <input 
                             type='number'
                             name='hours'
@@ -49,10 +49,9 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                             value={ingredient[timeType].hours}
                             onChange={(e) => updateTime('hours', e.target.value)}
                         />
-                        <label htmlFor='hours'>H<span className='desk-only time-input-label'>ours</span></label>
                     </span>
                     <span>
-                    
+                        <label htmlFor='minutes'>M<span className='desk-only time-input-label'>inutes</span></label>
                         <input 
                             type='number'
                             name='minutes'
@@ -61,10 +60,9 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                             value={ingredient[timeType].minutes}
                             onChange={(e) => updateTime('minutes', e.target.value)}
                         />
-                        <label htmlFor='minutes'>M<span className='desk-only time-input-label'>inutes</span></label>
                     </span>
                     <span>
-                    
+                        <label htmlFor='seconds'>S<span className='desk-only time-input-label'>econds</span></label>
                         <input 
                             type='number'
                             name='seconds'
@@ -72,8 +70,7 @@ export default function TimeDurationInput({name= "", inputClass, ingredient = {}
                             className='create-ingredient-form time-input'
                             value={ingredient[timeType].seconds}
                             onChange={(e) => updateTime('seconds', e.target.value)}
-                        />
-                        <label htmlFor='seconds'>S<span className='desk-only time-input-label'>econds</span></label>
+                        />  
                     </span>
                 </div>
         </div>
