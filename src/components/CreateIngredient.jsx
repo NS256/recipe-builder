@@ -3,6 +3,7 @@ import { normalizeTime } from '../utils/TimeUtilities';
 import { storeTime } from '../utils/TimeUtilities';
 import '../styles/CreateIngredient.css';
 import TimeDurationInput from './TimeDurationInput';
+import { capitalize } from '../utils/TextUtils';
 
 export default function CreateIngredient({recipe, setRecipe, ingredientList, setIngredientList, setErrorMessage}) {
 
@@ -60,6 +61,11 @@ export default function CreateIngredient({recipe, setRecipe, ingredientList, set
             const cookTime = storeTime(ingredient.cookTime);
             const prepTime = storeTime(ingredient.prepTime);
             const restTime = storeTime(ingredient.restTime);
+
+            //check if new ingredient already exists in the ingredient list
+            if (ingredientList.some(el => el.name.toLowerCase() === ingredient.name.toLowerCase())) {
+                return setErrorMessage(`Looks like you've already added ${capitalize(ingredient.name.toLowerCase())} to your recipe.`);
+            }
 
             //add to ingredient list state
             if ((cookTime + prepTime + restTime) > 0) {
