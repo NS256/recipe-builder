@@ -28,6 +28,19 @@
     margin-bottom: 0px;
 }
 
+.recipe-ingredient .ingredient-index {
+    /* color: var(--border-dark-grey); */
+    color: var(--border-dark-grey);
+    font-weight: 350;
+    font-size: 15px;
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+    text-align: right;
+    /* transform: translateY(-25px); */
+    
+}
+
 .ingredient-container .action-buttons {
     position: absolute;
     top: 0px;

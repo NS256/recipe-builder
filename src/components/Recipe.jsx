@@ -15,6 +15,8 @@ export default function Recipe({cookiesAllowed = false, setErrorMessage}) {
 
     const [recipe, setRecipe] = useState({});
 
+    let ingredientIndex = 0;
+
     //update the ingredient list with the recipe saved in cookies
     useEffect(()=> {
         setIngredientList(recallRecipeCookie());
@@ -22,7 +24,7 @@ export default function Recipe({cookiesAllowed = false, setErrorMessage}) {
 
     //build the recipe state on the updating the ingredient state
      useEffect(() => {
-        console.log(ingredientList);
+        ingredientIndex = 0;
         let recipeObj = {};
 
         /*recipe obj will store the prep, cook and rest times but they'll each be a sum so fit into the recipe without adding extra states */
@@ -105,7 +107,7 @@ export default function Recipe({cookiesAllowed = false, setErrorMessage}) {
                         <React.Fragment key={key}>
                             {recipe[key].map((item) => {
                                 const ingredient = ingredientList.find(ingredient => ingredient.id === item.id);
-                                return <Ingredient key={item.id} action={item.type} ingredient={ingredient} updateIngredient={updateIngredient}/>;
+                                return <Ingredient key={item.id} action={item.type} ingredient={{...ingredient, index: ++ingredientIndex}} updateIngredient={updateIngredient}/>;
                             })}
                             {(Object.keys(recipe).length > index + 1) && 
                                 <SetTimeInstruction 
