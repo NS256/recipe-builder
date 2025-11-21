@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
 import '../styles/CookieWarning.css';
-import { CookieAllowedContext } from '../contexts/CookieContext';
 
 export default function CookieWarning({ cookiesAllowedState, setCookiesAllowedState }) {
 
     // If a context value is provided by a Provider, use it; otherwise fall back to the prop.
-    const contextAllowed = useContext(CookieAllowedContext);
     const allowed = typeof contextAllowed !== 'undefined' ? contextAllowed : cookiesAllowedState;
 
     const handleCookieSet = (cookieAllow) => {
