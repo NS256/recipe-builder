@@ -26,8 +26,6 @@ I did make some use of AI while building this project to create the below featur
 - Adding a CSS animation to show/hide the error message modal.
 - Some positional movements of elements within the DOM to reduce their impact on other elements.
 
-## Building the recipe
-
 ## Unit Testing
 While developing my application I wrote unit tests for specific elements and ran these using Vitest. This allowed to me confirm that the functions I'd written were outputting what I was expecting and could handle things like invalid input or any of the changes I made without breaking anything that was already written. I also took the opportunity on a couple of occasions to practice test-driven-development by writing a testing before building a function and then writing the function to suit that test - I found this a very useful excercise  as this gave me a clear understanding of what I did or didn't need to do with a specific function to avoid writing lines of code that wouldn't be used or didn't do what I wanted.
 Due to my limited knowledge in writing tests I chose not to write tests for each of my components but this is something that I want to learn more about and then go back in and write a comprehensive set of tests for.
