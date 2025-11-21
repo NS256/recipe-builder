@@ -36,13 +36,11 @@ Due to my limited knowledge in writing tests I chose not to write tests for each
 My project uses a React file structure as explained below:
 - public/ <- This folder stores any of the images that are used within the application
 - src/ <- This folder stores the source code for the application
-  - assets/ <- to be deleted
   - components/ <- The components folder stores each of the elements that make up the app in the Documemnt Object Model in a web browser - components is the name given to these files within react. While some of these do have specific uses and wouldn't be reused, most of these are designed to be able to be reused and either input or output different data depending on the details that are passed into the component
     - CookieWarning.jsx <- This file contains the CookieWarning element that's used to confirm if a user is happy for cookies to be used to save their recipe or not.
     - CookieWarning.test.jsx <- This file is the unit test I built to ensure the CookieWarning is shown/not shown correctly depending on specific conditions such as cookies having been allowed previously.
     - CreateIngredient.jsx <- This is the component used to add new ingredients in to the application it contains a form and other components within that form. To keep the form simple some of the elements are hidden by default and have a default value set but can be shown or hidden on setting the button. Submitting the form calls the setCookie function from the CookieUtils.js file
     - ErrorAlert.jsx <- This is a reusable component I created to display an error from the application. To avoid needing to create a new error modal or popup for each possible error message, this component takes a message as a property and will then display this message in a modal that's fixed to the top of the screen.
-    - Footer.jsx <- to be deleted
     - Header.jsx <- This component is shared across all pages within the application, right now this only contains the name and logo of the application but as I continue to build this the goal is to add a working backend with the ability to log in/out and the buttons for this will be stored in the header. If I chose to add any other pages as well, the links to these will be added in the header.
     - Ingredient.jsx <- This is the most used component in the application, it's used to show each individual action as part of a recipe (e.g. "Start cooking the chicken") along with the context on how long that particular action will take overall. It also contains edit functionality to allow the name of the ingredient or the specific time that ingredient element is showing to be changed - if the name is changed, this will be reflected on any other Ingredient element for the same itemm.
     - Recipe.jsx <- This is the overall container for all elements within the Recipe which includes the CreateIngredient, Ingredient and any other elements. This allows me to route to this area of the app from the Welcome page without needing to specify each element individually.
@@ -51,7 +49,6 @@ My project uses a React file structure as explained below:
     - TimeDurationInputCompact.jsx <- This is a more compact version of the TimeDurationInput component thats used for editing a time on within the Ingredient card, I created this as it doesn't need to include details such as the name of the cooking type that's being edited.
     - Welcome.jsx <- This is the homepage for the application, right now this contains the app's logo, a welcome message and a button to navigate to the Recipe builder component.
     - Welcome.test.jsx <- While experimenting with unit tests I created this file to test that the Welcome compoent is displayed correctly within the application.
-  - contexts/ <-to be deleted
   - styles/ <- This folder contains all the stylesheets for the specific components of my application (Or where a specific component doesnt' have it's own stylesheet, it will be covered in the stylesheet of it's parent element.) Separating out style sheets made it easier to find the rules that applied to a particular component and ensure I could be as specific as possible where needed.
     - CookieWarning.css
     - CreateIngredient.css
