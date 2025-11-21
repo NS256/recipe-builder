@@ -5,7 +5,6 @@ import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './components/Header';
 import CookieWarning from './components/CookieWarning';
-import { CookieAllowedContext } from './contexts/CookieContext';
 import {cookiesAllowed} from './utils/CookieUtils';
 import Recipe from './components/Recipe';
 import Welcome from './components/Welcome';
@@ -33,7 +32,6 @@ function App() {
       <img src="/newBackgroundImage.jpg" className="background-image"/>
       <div className="app-container">
         <SpeedInsights/>
-        <CookieAllowedContext.Provider value={cookiesAllowedState}>
           <Header />
           <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
           <main>
@@ -46,7 +44,6 @@ function App() {
             </Router>
           
           </main>
-        </CookieAllowedContext.Provider>
       </div>
     </>
   )
