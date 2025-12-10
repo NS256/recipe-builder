@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
@@ -32,6 +33,7 @@ function App() {
       <img src="/newBackgroundImage.jpg" className="background-image"/>
       <div className="app-container">
         <SpeedInsights/>
+        <Analytics/>
           <Header />
           <CookieWarning cookiesAllowedState={cookiesAllowedState} setCookiesAllowedState={setCookiesAllowedState} />
           <main>
